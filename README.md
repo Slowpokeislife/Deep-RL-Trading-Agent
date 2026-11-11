@@ -67,30 +67,39 @@ The repository also contains an optional convolutional training script (`train_m
 
 ## Results and visualizations
 
-The included plots are traces of **cumulative simulated reward**, not verified net financial returns from live trading. No specific percentage performance or superiority claim is inferred from chart filenames.
+The included plots show **cumulative simulated rewards**, not verified investment returns. The original project archive contains the same six plot names in each of two folders: `Resultados/10bars/` and `Resultados/3bars/`. These comparisons reflect different observation windows and simulated transaction costs.
 
 ### 10-bar observation window
 
-| Historical training period (2016) | Historical validation period (2015) |
-|---|---|
-| ![10-bar training reward](Resultados/10bars/rewards-YNDX16.png) | ![10-bar historical validation reward](Resultados/10bars/rewards-YNDX15.png) |
+| YNDX 2016 | YNDX 2015 |
+|:---:|:---:|
+| ![10 bars - YNDX 2016](Resultados/10bars/rewards-YNDX16.png) | ![10 bars - YNDX 2015](Resultados/10bars/rewards-YNDX15.png) |
+
+| No commission | 0.05% commission |
+|:---:|:---:|
+| ![10 bars - no commission](Resultados/10bars/rewards-YNDX15_nocommission.png) | ![10 bars - 0.05% commission](Resultados/10bars/rewards-YNDX15_commission=0.05%25.png) |
+
+| 0.06% commission | 0.075% commission |
+|:---:|:---:|
+| ![10 bars - 0.06% commission](Resultados/10bars/rewards-YNDX15_commission=0.06%25.png) | ![10 bars - 0.075% commission](Resultados/10bars/rewards-YNDX15_commission=0.075%25.png) |
 
 ### 3-bar observation window
 
-| Historical training period (2016) | Historical validation period (2015) |
-|---|---|
-| ![3-bar training reward](Resultados/3bars/rewards-YNDX16.png) | ![3-bar historical validation reward](Resultados/3bars/rewards-YNDX15.png) |
+| YNDX 2016 | YNDX 2015 |
+|:---:|:---:|
+| ![3 bars - YNDX 2016](Resultados/3bars/rewards-YNDX16.png) | ![3 bars - YNDX 2015](Resultados/3bars/rewards-YNDX15.png) |
 
-### Commission sensitivity
+| No commission | 0.05% commission |
+|:---:|:---:|
+| ![3 bars - no commission](Resultados/3bars/rewards-YNDX15_nocommission.png) | ![3 bars - 0.05% commission](Resultados/3bars/rewards-YNDX15_commission=0.05%25.png) |
 
-Commission changes influence rewards in the simulation. The repository preserves additional runs with varied assumed fees; they must be compared under equivalent data and model settings.
+| 0.06% commission | 0.075% commission |
+|:---:|:---:|
+| ![3 bars - 0.06% commission](Resultados/3bars/rewards-YNDX15_commission=0.06%25.png) | ![3 bars - 0.075% commission](Resultados/3bars/rewards-YNDX15_commission=0.075%25.png) |
 
-| 10 bars (2015) | 3 bars (2015) |
-|---|---|
-| ![10 bars, no commission](Resultados/10bars/rewards-YNDX15_nocommission.png) | ![3 bars, no commission](Resultados/3bars/rewards-YNDX15_nocommission.png) |
-| ![10 bars, 0.05% commission](Resultados/10bars/rewards-YNDX15_commission=0.05%.png) | ![3 bars, 0.05% commission](Resultados/3bars/rewards-YNDX15_commission=0.05%.png) |
+> **Image paths:** These relative paths match the original uploaded ZIP. GitHub will render them if both `Resultados/10bars/` and `Resultados/3bars/` were uploaded with the exact same filenames. The `%` sign in filename URLs is encoded as `%25`. If your actual GitHub repository stores all six images directly under `Resultados/` instead, remove `10bars/` and `3bars/` from the paths and show only the one set you actually uploaded.
 
-See [experiment notes](docs/EXPERIMENTS.md) and the original [research report](reporte.pdf) for the analysis and further figures.
+See [experiment notes](docs/EXPERIMENTS.md) and the original [research report](reporte.pdf) for further details.
 
 ## Repository structure
 
@@ -109,8 +118,8 @@ See [experiment notes](docs/EXPERIMENTS.md) and the original [research report](r
 │   └── validation.py               # Evaluation metrics
 ├── test/                            # Existing tests
 ├── Resultados/
-│   ├── 10bars/                     # Experiment plots
-│   └── 3bars/
+│   ├── 10bars/                     # Six reward plots
+│   └── 3bars/                     # Six reward plots
 ├── train_model.py                   # Feed-forward training
 ├── train_model_conv.py              # Optional 1D CNN training
 ├── run_model.py                     # Simulated evaluation + chart
