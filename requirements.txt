@@ -1,0 +1,9 @@
+# Unpinned: exact original environment not available. Validate compatible versions.
+numpy
+matplotlib
+torch
+gymnasium
+ptan
+pytorch-ignite
+tensorboard
+pytest

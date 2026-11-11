@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.venv/
+venv/
+# Generated artifacts
+runs/
+saves/
+# Editor / system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+# Note: keep Resultados/ tracked intentionally (documentation images).
+# Note: tracked files remain tracked even after these patterns are added.
